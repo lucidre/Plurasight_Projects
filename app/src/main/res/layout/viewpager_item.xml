@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.oti.plurasightprojects.interfaces.ViewPagerInterface" />
+        <import type="com.oti.plurasightprojects.Constants"/>
+
+        <variable
+            name="viewPagerDataBinding"
+            type="com.oti.plurasightprojects.databinding.ViewPagerDataBinding" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:learningList="@{viewPagerDataBinding.position == Constants.LEARNING_IQ_POS?viewPagerDataBinding.learningList:null}"
+            app:skillIQList="@{viewPagerDataBinding.position == Constants.SKILL_IQ_POS?viewPagerDataBinding.skillList:null}"
+            tools:listitem="@layout/item_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

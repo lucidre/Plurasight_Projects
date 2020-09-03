@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Plurasight Projects</string>
+    <string name="gads">bg_gads</string>
+    <string name="supported">bg_supported</string>
+    <string name="text">bg_text</string>
+    <string name="learning_hours">Learning hours</string>
+    <string name="skill_iq">skill IQ score</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="github_link">Project on GITHUB (link)</string>
+    <string name="submit">Submit</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="oops_developer">Oops! Our developers needs to be cautioned</string>
+    <string name="network_error">Oops! Network Error</string>
+    <string name="refresh">Refresh</string>
+    <string name="dialogNull">Dialog Null</string>
+    <string name="dialogSuccess">Dialog Success</string>
+    <string name="dialogFailure">Dialog Failure</string>
+    <string name="submissionSucess">Submission Successful</string>
+    <string name="submissionFailure">Submission Not Successful</string>
+    <string name="submissionConfirmation">Are you sure</string>
+    <string name="yes">Yes</string>
+    <string name="exit">Press back again to exit</string>
+    <string name="error">It must not be blank</string>
+
+    <string-array name="viewpagerTitles">
+        <item>Learning Leaders</item>
+        <item>Skill IQ Leadera</item>
+    </string-array>
+</resources>
