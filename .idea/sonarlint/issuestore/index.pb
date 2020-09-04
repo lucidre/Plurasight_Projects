@@ -23,8 +23,6 @@ p
 @app/src/main/java/com/oti/plurasightprojects/SubmitActivity.java,4\e\4e9ec4c3dbc7e68e93d1f5af2d5709cdf77027ab
 n
 >app/src/main/java/com/oti/plurasightprojects/MainActivity.java,e\a\ea2536e5765ca2faac13af02c706c46b77cbcf7f
-
-Oapp/src/main/java/com/oti/plurasightprojects/interfaces/ViewPagerInterface.java,2\5\258ab3356dc56803e70f1d6ef240e0d4f77a9aae
 z
 Japp/src/main/java/com/oti/plurasightprojects/adapter/ViewPagerAdapter.java,6\4\64cf7affd8725566d14ee6861435fbbc5e3b409a
 }

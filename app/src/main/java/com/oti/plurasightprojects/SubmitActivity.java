@@ -88,6 +88,7 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 	public void isSubmitting() {
 		if (mDialog != null) mDialog.dismiss();
 
+
 		mBinding.setSubmitting(true);
 		mBinding.setSubmitting(false);
 		mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
@@ -106,6 +107,7 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 			@Override
 			public void onResponse(Call<Void> call, Response<Void> response) {
 				mBinding.setSubmitting(false);
+				if (mDialog != null) mDialog.dismiss();
 				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
 				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogSuccess));
 
@@ -115,6 +117,7 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 			@Override
 			public void onFailure(Call<Void> call, Throwable t) {
 				mBinding.setSubmitting(false);
+				if (mDialog != null) mDialog.dismiss();
 				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_FAILURE);
 				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogFailure));
 			}
