@@ -2,7 +2,8 @@
     <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
         <data >
-            <import type="com.oti.plurasightprojects.interfaces.ViewPagerInterface" />
+
+            <import type="com.oti.plurasightprojects.Constants" />
             <variable
                 name="itemDataBinding"
                 type="com.oti.plurasightprojects.databinding.ItemDataBinding" />
@@ -33,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:scaleType="fitCenter"
-            app:imageUrl="@{itemDataBinding.classType == ViewPagerInterface.LEARNING_TYPE ?itemDataBinding.itemLearning.badgeUrl:itemDataBinding.itemSkill.badgeUrl}"
+            app:imageUrl="@{itemDataBinding.classType == Constants.LEARNING_TYPE ?itemDataBinding.itemLearning.badgeUrl:itemDataBinding.itemSkill.badgeUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.0"
@@ -47,7 +48,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/gudea"
-            android:text="@{itemDataBinding.classType == ViewPagerInterface.LEARNING_TYPE ?itemDataBinding.itemLearning.name:itemDataBinding.itemSkill.name}"
+            android:text="@{itemDataBinding.classType == Constants.LEARNING_TYPE ?itemDataBinding.itemLearning.name:itemDataBinding.itemSkill.name}"
             android:textAlignment="textStart"
             android:textColor="@android:color/black"
             android:textDirection="locale"
@@ -66,7 +67,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/gudea"
-            android:text="@{itemDataBinding.classType == ViewPagerInterface.LEARNING_TYPE ?itemDataBinding.itemLearning.getDescription(context):itemDataBinding.itemSkill.getDescription(context)}"
+            android:text="@{itemDataBinding.classType == Constants.LEARNING_TYPE ?itemDataBinding.itemLearning.getDescription(context):itemDataBinding.itemSkill.getDescription(context)}"
             android:textAlignment="textStart"
             android:textDirection="locale"
             android:textSize="18sp"

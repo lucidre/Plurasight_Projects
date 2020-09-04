@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -14,11 +15,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.oti.plurasightprojects.databinding.ActivitySubmitBinding;
 import com.oti.plurasightprojects.dialog.SubmitActivityDialogFragment;
+import com.oti.plurasightprojects.interfaces.ApiTest;
 import com.oti.plurasightprojects.interfaces.SubmitDialogInterface;
 import com.oti.plurasightprojects.interfaces.SubmitInterface;
+import com.oti.plurasightprojects.model.ApiBuilder;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SubmitActivity extends AppCompatActivity implements SubmitInterface, SubmitDialogInterface {
 
@@ -86,30 +92,33 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 		mBinding.setSubmitting(false);
 		mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
 		mDialog.show(getSupportFragmentManager(), getString(R.string.dialogSuccess));
-	/*	String name = mBinding.firstName.getText().toString();
+		String name = mBinding.firstName.getText().toString();
 		String lastName = mBinding.lastName.getText().toString();
 		String email = mBinding.email.getText().toString();
 		String github = mBinding.github.getText().toString();
 
+//okhttp
+		ApiTest api = ApiBuilder.buildSubmitService(ApiTest.class);
 
-		Api api = ApiBuilder.buildService(Api.class);
-		Call<Void> submitProject = api.submitProject(email, name, lastName, github);
+		Call<Void> submitProject = api.submitTestProject(email, name, lastName, github);
 
 		submitProject.enqueue(new Callback<Void>() {
 			@Override
 			public void onResponse(Call<Void> call, Response<Void> response) {
 				mBinding.setSubmitting(false);
-				mDialog = new DialogInterface(SubmitDialogInterface.TYPE_SUCESS);
+				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
 				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogSuccess));
+
+				Log.e("SUBMIT", "onResponse: " + response.code());
 			}
 
 			@Override
 			public void onFailure(Call<Void> call, Throwable t) {
 				mBinding.setSubmitting(false);
-				mDialog = new DialogInterface(SubmitDialogInterface.TYPE_FAILURE);
+				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_FAILURE);
 				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogFailure));
 			}
-		});*/
+		});
 	}
 
 	public boolean checkName(EditText text) {

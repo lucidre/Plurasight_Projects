@@ -11,22 +11,25 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
+import static com.oti.plurasightprojects.Constants.EMAIL_ENTRY_ID;
+import static com.oti.plurasightprojects.Constants.GITHUB_LINK_ENTRY_ID;
+import static com.oti.plurasightprojects.Constants.LAST_NAME_ENTRY_ID;
+import static com.oti.plurasightprojects.Constants.LEARNING_LEADERS_GET_URL;
+import static com.oti.plurasightprojects.Constants.NAME_ENTRY_ID;
+import static com.oti.plurasightprojects.Constants.SKILL_IQ_GET_URL;
+import static com.oti.plurasightprojects.Constants.SUBMIT_POST_URL;
+
 public interface Api {
 
-	@GET("api/hours")
+	@GET(LEARNING_LEADERS_GET_URL)
 	Call<List<LearningLeaders>> getLearningLeaders();
-	@GET("api/skilliq")
+
+	@GET(SKILL_IQ_GET_URL)
 	Call<List<SkillIQLeaders>> getSkillIQLeaders();
 
-	@POST("https://docs.google.com/forms/d/e/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
+	@POST(SUBMIT_POST_URL)
 	@FormUrlEncoded
-	Call<Void>  submitProject(
-			@Field("entry.1824927963") String email,
-			@Field("entry.1877115667") String name,
-			@Field("entry.2006916086") String lastName,
-			@Field("entry.284483984") String gitHubLink
-	);
-
+	Call<Void> submitProject(@Field(EMAIL_ENTRY_ID) String email, @Field(NAME_ENTRY_ID) String name, @Field(LAST_NAME_ENTRY_ID) String lastName, @Field(GITHUB_LINK_ENTRY_ID) String gitHubLink);
 
 
 }

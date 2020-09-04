@@ -8,10 +8,10 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.oti.plurasightprojects.Constants;
 import com.oti.plurasightprojects.R;
 import com.oti.plurasightprojects.databinding.ItemDataBinding;
 import com.oti.plurasightprojects.databinding.ItemViewBinding;
-import com.oti.plurasightprojects.interfaces.ViewPagerInterface;
 import com.oti.plurasightprojects.model.LearningLeaders;
 import com.oti.plurasightprojects.model.SkillIQLeaders;
 
@@ -56,7 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 	private void setSkillIQ(@NonNull RecyclerViewHolder holder, SkillIQLeaders object) {
 		ItemDataBinding itemDataBinding = new ItemDataBinding();
-		itemDataBinding.setClassType(ViewPagerInterface.SKILL_TYPE);
+		itemDataBinding.setClassType(Constants.SKILL_TYPE);
 		itemDataBinding.setItemLearning(null);
 		itemDataBinding.setItemSkill(object);
 
@@ -67,7 +67,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 	private void setLearningLeaders(@NonNull RecyclerViewHolder holder, LearningLeaders object) {
 		ItemDataBinding itemDataBinding = new ItemDataBinding();
-		itemDataBinding.setClassType(ViewPagerInterface.LEARNING_TYPE);
+		itemDataBinding.setClassType(Constants.LEARNING_TYPE);
 		itemDataBinding.setItemLearning(object);
 		itemDataBinding.setItemSkill(null);
 
