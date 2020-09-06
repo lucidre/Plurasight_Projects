@@ -7,7 +7,7 @@ This project is a very simple Android Project aimed at implementing some simple 
 In this project, a mobile design of the GADS 2020 Leaderboard is implented.
 The mobile App will display Top 20 learners in the Learning Leaders’ category and Top 20 learners in the Skill IQ Leaders’ category.
 
-This project wmakes use of material from differnt learning scopes such as:
+This project makes use of material from differnt learning scopes such as:
 Multi-Activity Project
 View pager
 Customizing Toolbar
@@ -22,19 +22,19 @@ and many more.
 ## Project Workflow:
 Splash Screen             |  No Internet
 :-------------------------:|:-------------------------:
- <img src="https://github.com/lucidre/ProjectImages/blob/master/splash_screen.png"   height="400" > |  <img src="https://github.com/lucidre/ProjectImages/blob/master/no_internet.png"   height="400" >
+ <img src="https://i.imgur.com/pnqceCr.png"   height="400" > |  <img src="https://i.imgur.com/CTdMXFw.png"   height="400" >
  
  Learning Leaders             |  Skill IQ
  :-------------------------:|:-------------------------:
-<img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" > | <img src="https://i.imgur.com/zcdy4qF.png"   height="400" >
+<img src="https://i.imgur.com/FRqAE1l.png"   height="400" > | <img src="https://i.imgur.com/zcdy4qF.png"   height="400" >
 
 Submit             |  Confirmation
 :-------------------------:|:-------------------------:
-<img src="https://github.com/lucidre/ProjectImages/blob/master/submit.png"  height="400" > |  <img src="https://github.com/lucidre/ProjectImages/blob/master/confirmation.png"   height="400" >
+<img src="https://i.imgur.com/CY4M7Hz.png"  height="400" > |  <img src="https://i.imgur.com/rOoFEpx.png"   height="400" >
 
-Sucess         |  Error'
+Sucess         |  Error
 :-------------------------:|:-------------------------:
- <img src="https://github.com/lucidre/ProjectImages/blob/master/success.png"   height="400" > | <img src="https://github.com/lucidre/ProjectImages/blob/master/error.png"   height="400" >
+ <img src="https://i.imgur.com/HkFNGmD.png"   height="400" > | <img src="https://i.imgur.com/HJNNcpn.png"   height="400" >
 
 # Authors and acknowledgment:
 The GADS (Google Africa Development Scholarship ) Team
