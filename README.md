@@ -37,8 +37,8 @@ Sucess         |  Error
  <img src="https://i.imgur.com/HkFNGmD.png"   height="400" > | <img src="https://i.imgur.com/HJNNcpn.png"   height="400" >
  
  ## Project View
- https://i.imgur.com/ECTdqQh.gifv
  <img src="https://i.imgur.com/XapGAdh.gif"   height="500" > 
+ 
 # Authors and acknowledgment:
 The GADS (Google Africa Development Scholarship ) Team
 
