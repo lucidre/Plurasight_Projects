@@ -21,7 +21,7 @@ and many more.
 
 ## Project Workflow:
 
-![SPLASH_SCREEN](https://drive.google.com/file/d/1GWOb20nB2-ZYEdj2aPVTPL4l3kooIPqb/view?usp=sharing)
+![](My-Projects/app/src/main/res/drawable/marvel.jpg )
 
 
 # Authors and acknowledgment:
