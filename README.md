@@ -20,9 +20,9 @@ Retrofit
 and many more.
 
 ## Project Workflow:
-
-<img src="https://github.com/lucidre/ProjectImages/blob/master/splash_screen.png"   height="400" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/no_internet.png"   height="400" >
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+ <img src="https://github.com/lucidre/ProjectImages/blob/master/splash_screen.png"   height="400" > |  <img src="https://github.com/lucidre/ProjectImages/blob/master/no_internet.png"   height="400" >
 <img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" >
 <img src="https://github.com/lucidre/ProjectImages/blob/master/skill_iq.png"   height="400" >
 <img src="https://github.com/lucidre/ProjectImages/blob/master/submit.png"  height="400" >
