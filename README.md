@@ -26,7 +26,7 @@ Splash Screen             |  No Internet
  
  Learning Leaders             |  Skill IQ
  :-------------------------:|:-------------------------:
-<img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" > | <img src="https://imgur.com/zcdy4qF"   height="400" >
+<img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" > | <img src="https://i.imgur.com/zcdy4qF.png"   height="400" >
 
 Submit             |  Confirmation
 :-------------------------:|:-------------------------:
