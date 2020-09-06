@@ -20,15 +20,19 @@ Retrofit
 and many more.
 
 ## Project Workflow:
-Solarized dark             |  Solarized Ocean
+Splash Screen             |  No Internet
 :-------------------------:|:-------------------------:
  <img src="https://github.com/lucidre/ProjectImages/blob/master/splash_screen.png"   height="400" > |  <img src="https://github.com/lucidre/ProjectImages/blob/master/no_internet.png"   height="400" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/skill_iq.png"   height="400" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/submit.png"  height="400" >
+ Learning Leaders             |  Skill IQ
+:-------------------------:|:-------------------------:
+<img src="https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png"   height="400" > | <img src="https://github.com/lucidre/ProjectImages/blob/master/skill_iq.png"   height="400" >
+Submit             |  Confirmation
+:-------------------------:|:-------------------------:
+<img src="https://github.com/lucidre/ProjectImages/blob/master/submit.png"  height="400" > |  
 <img src="https://github.com/lucidre/ProjectImages/blob/master/confirmation.png"   height="500" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/success.png"   height="500" >
-<img src="https://github.com/lucidre/ProjectImages/blob/master/error.png"   height="500" >
+Sucess         |  Error
+:-------------------------:|:-------------------------:
+ <img src="https://github.com/lucidre/ProjectImages/blob/master/success.png"   height="500" > | <img src="https://github.com/lucidre/ProjectImages/blob/master/error.png"   height="500" >
 
 # Authors and acknowledgment:
 The GADS (Google Africa Development Scholarship ) Team
