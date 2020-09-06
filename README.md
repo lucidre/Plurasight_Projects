@@ -21,8 +21,14 @@ and many more.
 
 ## Project Workflow:
 
-![](My-Projects/app/src/main/res/drawable/marvel.jpg )
-
+![](https://github.com/lucidre/ProjectImages/blob/master/splash_screen.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/no_internet.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/learning_leaders.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/skill_iq.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/submit.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/confirmation.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/success.png)
+![](https://github.com/lucidre/ProjectImages/blob/master/error.png)
 
 # Authors and acknowledgment:
 The GADS (Google Africa Development Scholarship ) Team
