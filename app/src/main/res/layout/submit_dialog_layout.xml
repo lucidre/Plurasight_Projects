@@ -9,11 +9,11 @@
 
         <variable
             name="submitDialogInterface"
-            type="com.oti.plurasightprojects.interfaces.SubmitDialogInterface" />
+            type="com.oti.gadsproject.interfaces.SubmitDialogInterface" />
 
         <variable
             name="dialogFragmentDataBinding"
-            type="com.oti.plurasightprojects.databinding.DialogFragmentDataBinding" />
+            type="com.oti.gadsproject.databinding.DialogFragmentDataBinding" />
     </data>
 
 

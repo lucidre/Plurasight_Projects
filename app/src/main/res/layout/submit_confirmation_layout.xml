@@ -11,7 +11,7 @@
 
         <variable
             name="submittingDialogInterface"
-            type="com.oti.plurasightprojects.interfaces.SubmitDialogInterface" />
+            type="com.oti.gadsproject.interfaces.SubmitDialogInterface" />
     </data>
 
 

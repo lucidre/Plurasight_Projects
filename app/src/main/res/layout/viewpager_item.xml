@@ -4,11 +4,11 @@
     <data>
 
 
-        <import type="com.oti.plurasightprojects.Constants"/>
+        <import type="com.oti.gadsproject.Constants" />
 
         <variable
             name="viewPagerDataBinding"
-            type="com.oti.plurasightprojects.databinding.ViewPagerDataBinding" />
+            type="com.oti.gadsproject.databinding.ViewPagerDataBinding" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

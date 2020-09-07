@@ -9,7 +9,7 @@
 
         <variable
             name="submitInterface"
-            type="com.oti.plurasightprojects.interfaces.SubmitInterface" />
+            type="com.oti.gadsproject.interfaces.SubmitInterface" />
 
         <variable
             name="submitting"

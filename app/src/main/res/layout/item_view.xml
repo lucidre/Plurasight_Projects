@@ -3,10 +3,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
         <data >
 
-            <import type="com.oti.plurasightprojects.Constants" />
+            <import type="com.oti.gadsproject.Constants" />
             <variable
                 name="itemDataBinding"
-                type="com.oti.plurasightprojects.databinding.ItemDataBinding" />
+                type="com.oti.gadsproject.databinding.ItemDataBinding" />
 
 
         </data>

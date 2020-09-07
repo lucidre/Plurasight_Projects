@@ -9,11 +9,11 @@
 
         <variable
             name="updateui"
-            type="com.oti.plurasightprojects.interfaces.UpdateUserInterface" />
+            type="com.oti.gadsproject.interfaces.UpdateUserInterface" />
 
         <variable
             name="dataview"
-            type="com.oti.plurasightprojects.databinding.ActivityMainDataBinding" />
+            type="com.oti.gadsproject.databinding.ActivityMainDataBinding" />
 
 
     </data>

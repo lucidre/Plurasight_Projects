@@ -1,7 +1,0 @@
-
-^
-java:S1126~"AReplace this if-then-else statement by a single return statement.(¿ğÍÂ8¼ğÑÅ.
-x	java:S116,"WRename this field "CURRENT_TIME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÒĞ®ûÿÿÿÿ8¼ğÑÅ.
-j	java:S1162"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å½öŞ8´›Ô÷Å.
-T
-java:S2589\"7Remove this expression which always evaluates to "true"(÷ò¬í8¼ğÑÅ.
