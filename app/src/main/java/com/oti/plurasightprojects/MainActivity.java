@@ -9,13 +9,16 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.oti.plurasightprojects.databinding.ActivityMainBinding;
 import com.oti.plurasightprojects.databinding.ActivityMainDataBinding;
@@ -24,7 +27,9 @@ import com.oti.plurasightprojects.interfaces.UpdateUserInterface;
 import com.oti.plurasightprojects.model.ApiBuilder;
 import com.oti.plurasightprojects.model.LearningLeaders;
 import com.oti.plurasightprojects.model.SkillIQLeaders;
+import com.oti.plurasightprojects.viewmodel.MainActivityViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 	private List<SkillIQLeaders> mSkillIQLeaders;
 	private ActivityMainBinding mBinding;
 	private ActivityMainDataBinding mActivityMainDataBinding;
+	private MainActivityViewModel mViewModel;
+	private String TAG;
 
 
 	@Override
@@ -57,8 +64,34 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 		mActivityMainDataBinding = new ActivityMainDataBinding();
 		mBinding.setDataview(mActivityMainDataBinding);
 
-		getData(this);
 
+		ViewModelProvider viewModelProvider = new ViewModelProvider(getViewModelStore(), ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()));
+		mViewModel = viewModelProvider.get(MainActivityViewModel.class);
+
+		if (!mViewModel.mIsNewlyCreated && savedInstanceState != null) {
+			mViewModel.restoreState(savedInstanceState);
+			restoreData();
+		} else {
+			getData(this);
+		}
+		mViewModel.mIsNewlyCreated = false;
+
+	}
+
+	private void restoreData() {
+		mLearningLeaders = mViewModel.mLearningLeaders;
+		mSkillIQLeaders = mViewModel.mSkillIQLeaders;
+		mSkillFetched = true;
+		mLearningLeadersFetched = true;
+		updateUi();
+	}
+
+	@Override
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
+		super.onSaveInstanceState(outState);
+		if (outState != null) {
+			mViewModel.saveState(outState);
+		}
 	}
 
 	private void setTransparentBackground(Activity activity) {
@@ -89,15 +122,12 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 		NetworkInfo wifiNetwork = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 		NetworkInfo mobileNetwork = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-		if ((wifiNetwork != null && wifiNetwork.isConnected()) || (mobileNetwork != null && mobileNetwork.isConnected())) {
-			return true;
-		} else return false;
+		return (wifiNetwork != null && wifiNetwork.isConnected()) || (mobileNetwork != null && mobileNetwork.isConnected());
 
 
 	}
 
 	/**
-	 *
 	 * @param context check internet connecting if not availiable disable the viewpager, progressbar and display group
 	 */
 	public void getData(Context context) {
@@ -109,7 +139,15 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 			learningLeadersCall.enqueue(new Callback<List<LearningLeaders>>() {
 				@Override
 				public void onResponse(Call<List<LearningLeaders>> call, Response<List<LearningLeaders>> response) {
+
+					if (response.code() != 200) {
+						TAG = "LEARNING LEADERS";
+						Log.e(TAG, "onResponse: " + response.code());
+
+						return;
+					}
 					mLearningLeaders = response.body();
+					mViewModel.mLearningLeaders = (ArrayList<LearningLeaders>) mLearningLeaders;
 					mLearningLeadersFetched = true;
 					updateUi();
 				}
@@ -126,7 +164,15 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 			skillIQCall.enqueue(new Callback<List<SkillIQLeaders>>() {
 				@Override
 				public void onResponse(Call<List<SkillIQLeaders>> call, Response<List<SkillIQLeaders>> response) {
+
+					if (response.code() != 200) {
+						TAG = "SKILL IQ";
+						Log.e(TAG, "onResponse: " + response.code());
+						return;
+					}
+
 					mSkillIQLeaders = response.body();
+					mViewModel.mSkillIQLeaders = (ArrayList<SkillIQLeaders>) mSkillIQLeaders;
 					mSkillFetched = true;
 					updateUi();
 				}
@@ -155,6 +201,8 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 	@Override
 	public void refresh() {
 		mActivityMainDataBinding.setShow(false);
+		mActivityMainDataBinding.setDownloaded(false);
+
 		getData(MainActivity.this);
 	}
 
@@ -168,4 +216,6 @@ public class MainActivity extends AppCompatActivity implements UpdateUserInterfa
 			super.onBackPressed();
 		}
 	}
+
+
 }

@@ -20,6 +20,12 @@ public class Constants {
 	public static final String SUBMIT_API_URL = "https://docs.google.com/forms/d/e/";
 	public static final String LEARNING_TYPE = LearningLeaders.class.toString();
 	public static final String SKILL_TYPE = SkillIQLeaders.class.toString();
+	public static final String LEARNING_LEADERS_ARRAY_LIST = "com.oti.plurasightprojects.LEARNING_LEADERS_ARRAY_LIST";
+	public static final String SKILL_IQ_ARRAY_LIST = "com.oti.plurasightprojects.SKILL_IQ_ARRAY_LIST";
+	public static final String NAME = "com.oti.plurasightprojects.NAME";
+	public static final String OTHER_NAME = "com.oti.plurasightprojects.OTHER_NAME";
+	public static final String EMAIL = "com.oti.plurasightprojects.EMAIL";
+	public static final String GITHUB_LINK = "com.oti.plurasightprojects.GITHUB_LINK";
 
 	private Constants() {
 	}

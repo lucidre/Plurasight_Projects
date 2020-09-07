@@ -1,10 +1,12 @@
 package com.oti.plurasightprojects.model;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.oti.plurasightprojects.R;
 
-public class LearningLeaders {
+public class LearningLeaders implements Parcelable {
 
 	private String name;
 	private int hours;
@@ -18,6 +20,25 @@ public class LearningLeaders {
 		this.hours = hours;
 		this.country = country;
 		this.badgeUrl = badgeUrl;
+	}
+
+	public static final Creator<LearningLeaders> CREATOR = new Creator<LearningLeaders>() {
+		@Override
+		public LearningLeaders createFromParcel(Parcel in) {
+			return new LearningLeaders(in);
+		}
+
+		@Override
+		public LearningLeaders[] newArray(int size) {
+			return new LearningLeaders[size];
+		}
+	};
+
+	protected LearningLeaders(Parcel in) {
+		name = in.readString();
+		hours = in.readInt();
+		country = in.readString();
+		badgeUrl = in.readString();
 	}
 
 	public String getName() {
@@ -56,5 +77,16 @@ public class LearningLeaders {
 		return getHours()+" "+context.getResources().getString(R.string.learning_hours)+", "+getCountry();
 	}
 
+	@Override
+	public int describeContents() {
+		return 0;
+	}
 
+	@Override
+	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(name);
+		parcel.writeInt(hours);
+		parcel.writeString(country);
+		parcel.writeString(badgeUrl);
+	}
 }

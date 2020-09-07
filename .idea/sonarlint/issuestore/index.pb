@@ -29,3 +29,13 @@ Japp/src/main/java/com/oti/plurasightprojects/adapter/ViewPagerAdapter.java,6\4
 Mapp/src/main/java/com/oti/plurasightprojects/adapter/RecyclerViewAdapter.java,8\8\887666069847c787a231b9d351e324f02ce84f9e
 É
 Sapp/src/main/java/com/oti/plurasightprojects/databinding/ProjectBindingMethods.java,7\b\7b921e8d09256ef08f2d0e746c4470bf62b870f7
+Y
+)app/src/main/res/layout/activity_home.xml,8\4\84bbfd95b490b92591d2b037417f036942315d57
+Y
+)app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
+Å
+Qapp/src/main/java/com/oti/plurasightprojects/viewmodel/MainActivityViewModel.java,d\0\d0ba4b2984700418cb4a37af64278efd22e44501
+k
+;app/src/main/java/com/oti/plurasightprojects/Constants.java,f\c\fc20e23ee909de734a1e0070f3e9fbff530e5af9
+É
+Sapp/src/main/java/com/oti/plurasightprojects/viewmodel/SubmitActivityViewModel.java,3\5\355a9135f3a9c93968a0de6afd20bc4108a0ea05
