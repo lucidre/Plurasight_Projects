@@ -93,7 +93,6 @@
             android:inputType="text"
             android:maxLines="1"
             android:padding="3dp"
-            android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/last_name"
             app:layout_constraintEnd_toStartOf="@+id/last_name"

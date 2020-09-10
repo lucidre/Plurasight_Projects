@@ -5,11 +5,13 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.oti.gadsproject.databinding.ActivitySubmitBinding;
+import com.oti.gadsproject.databinding.DialogFragmentDataBinding;
+import com.oti.gadsproject.databinding.SubmitDialogLayoutBinding;
 import com.oti.gadsproject.dialog.SubmitActivityDialogFragment;
 import com.oti.gadsproject.interfaces.Api;
 import com.oti.gadsproject.interfaces.SubmitDialogInterface;
@@ -109,8 +113,8 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 
 
 	private void submitProject() {
-		if (checkName(mBinding.firstName) && checkName(mBinding.lastName) && checkName(mBinding.email) && checkName(mBinding.github)) {
-			mDialog = new SubmitActivityDialogFragment(Constants.TYPE_NULL);
+		if (checkName(mBinding.firstName) & checkName(mBinding.lastName) & checkName(mBinding.email) & checkName(mBinding.github)) {
+			mDialog = new SubmitActivityDialogFragment();
 			mDialog.show(getSupportFragmentManager(), getString(R.string.dialogNull));
 		}
 
@@ -123,8 +127,8 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 
 		mBinding.setSubmitting(true);
 		mBinding.setSubmitting(false);
-		mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
-		mDialog.show(getSupportFragmentManager(), getString(R.string.dialogSuccess));
+
+
 		String name = mBinding.firstName.getText().toString();
 		String lastName = mBinding.lastName.getText().toString();
 		String email = mBinding.email.getText().toString();
@@ -135,19 +139,33 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 
 		Call<Void> submitProject = api.submitProject(email, name, lastName, github);
 
+
+		SubmitDialogLayoutBinding layoutBinding = SubmitDialogLayoutBinding.inflate(getLayoutInflater());
+		final DialogFragmentDataBinding dataBinding = new DialogFragmentDataBinding();
+		layoutBinding.setDialogFragmentDataBinding(dataBinding);
+
+
+		final Toast statusToast = new Toast(this);
+		statusToast.setGravity(Gravity.CENTER, 0, 0);
+		statusToast.setDuration(Toast.LENGTH_SHORT);
+
+		statusToast.setView(layoutBinding.getRoot());
+
 		submitProject.enqueue(new Callback<Void>() {
 			@Override
 			public void onResponse(Call<Void> call, Response<Void> response) {
 				mBinding.setSubmitting(false);
-				if (mDialog != null) mDialog.dismiss();
+
 
 				if (response.code() != 200) {
 					TAG = "SUBMIT";
 					Log.e(TAG, "onResponse: " + response.code());
 					return;
 				}
-				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_SUCCESS);
-				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogSuccess));
+
+				dataBinding.setAnimationId(R.raw.animation_sucess);
+				dataBinding.setDialogText(getResources().getString(R.string.submissionSucess));
+				statusToast.show();
 
 				Log.e("SUBMIT", "onResponse: " + response.code());
 			}
@@ -155,9 +173,10 @@ public class SubmitActivity extends AppCompatActivity implements SubmitInterface
 			@Override
 			public void onFailure(Call<Void> call, Throwable t) {
 				mBinding.setSubmitting(false);
-				if (mDialog != null) mDialog.dismiss();
-				mDialog = new SubmitActivityDialogFragment(Constants.TYPE_FAILURE);
-				mDialog.show(getSupportFragmentManager(), getString(R.string.dialogFailure));
+
+				dataBinding.setAnimationId(R.raw.animation_failure);
+				dataBinding.setDialogText(getResources().getString(R.string.submissionFailure));
+				statusToast.show();
 			}
 		});
 	}
