@@ -5,7 +5,8 @@ GADS first project
 This project is a very simple Android Project aimed at implementing some simple concepts that are very important as far as Android Development is concerned.
 
 In this project, a mobile design of the GADS 2020 Leaderboard is implented.
-The mobile App will display Top 20 learners in the Learning Leaders’ category and Top 20 learners in the Skill IQ Leaders’ category.
+The mobile App will display Top 20 learners in the Learning Leaders’ category and Top 20 learners in the Skill IQ Leaders’ category with both data is sorted in the desending order of learning leaders hours or SkillIq leaders score
+
 
 This project makes use of material from differnt learning scopes such as:
 Multi-Activity Project
